@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'pages/lobby_page.dart';
 import 'pages/login_page.dart';
-import 'widgets/join_widget.dart';
+import 'pages/host_page.dart';
 import 'design.dart';
 
 void main() {

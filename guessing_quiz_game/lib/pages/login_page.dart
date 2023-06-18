@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:guessing_quiz_game/design.dart';
+import 'package:guessing_quiz_game/pages/lobby_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -10,10 +11,6 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   final TextEditingController _textController = TextEditingController();
-
-  void _printInputText() {
-    print(_textController.text);
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -27,14 +24,13 @@ class _LoginPageState extends State<LoginPage> {
           child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                Expanded(
+                const Expanded(
                   flex: 1,
-                  child: Container(
-                      child: const Image(
+                  child: Image(
                     image: NetworkImage(
                         'https://png.pngtree.com/png-vector/20190130/ourmid/pngtree-cute-animal-shiba-inu-cartoon-expression-pack-available-for-commercial-use-png-image_680119.jpg'),
                     //fit: BoxFit.contain,
-                  )),
+                  ),
                 ),
                 Padding(
                   padding: const EdgeInsets.all(16.0),
@@ -46,7 +42,15 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ),
                 ElevatedButton(
-                  onPressed: _printInputText,
+                  onPressed: () {
+                    if (_textController.text != "") {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  LobbyPage(name: _textController.text)));
+                    }
+                  },
                   child: const Text('Confirm'),
                 ),
               ]),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:guessing_quiz_game/design.dart';
+import 'package:guessing_quiz_game/pages/host_page.dart';
 
 class LobbyPage extends StatefulWidget {
   const LobbyPage({super.key, required this.name});
@@ -9,7 +9,6 @@ class LobbyPage extends StatefulWidget {
 }
 
 class _LobbyPageState extends State<LobbyPage> {
-  int _count = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,6 +25,10 @@ class _LobbyPageState extends State<LobbyPage> {
                   child: Image(
                       image: NetworkImage(
                           'https://png.pngtree.com/png-vector/20190130/ourmid/pngtree-cute-animal-shiba-inu-cartoon-expression-pack-available-for-commercial-use-png-image_680119.jpg')),
+                ),
+                const Text(
+                  'Choose Mode',
+                  style: TextStyle(color: Colors.red, fontSize: 20.0),
                 ),
                 Container(
                   alignment: Alignment.center,
@@ -44,7 +47,11 @@ class _LobbyPageState extends State<LobbyPage> {
                             borderRadius: BorderRadius.circular(100)),
                         child: TextButton(
                           onPressed: (() {
-                            print('button clicked');
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        HostPage(name: widget.name)));
                           }),
                           child: const Text('Create Room'),
                         ),
