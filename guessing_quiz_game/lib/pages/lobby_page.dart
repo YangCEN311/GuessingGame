@@ -21,40 +21,53 @@ class _LobbyPageState extends State<LobbyPage> {
             alignment: Alignment.center,
             child: Column(
               children: <Widget>[
-                const Image(
-                    image: NetworkImage(
-                        'https://drive.google.com/file/d/1CFG0XEoY2xzW_3aj4tBz5MuDkLBIh_Cf/view?usp=sharing')),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Container(
-                      alignment: Alignment.center,
-                      width: 200,
-                      height: 100,
-                      child: TextButton(
-                        onPressed: (() {
-                          print('button clicked');
-                        }),
-                        child: const Text('Create Room'),
+                const Expanded(
+                  flex: 1,
+                  child: Image(
+                      image: NetworkImage(
+                          'https://png.pngtree.com/png-vector/20190130/ourmid/pngtree-cute-animal-shiba-inu-cartoon-expression-pack-available-for-commercial-use-png-image_680119.jpg')),
+                ),
+                Container(
+                  alignment: Alignment.center,
+                  height: 100,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Container(
+                        alignment: Alignment.center,
+                        width: 150,
+                        height: 50,
+                        decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.blue,
+                            ),
+                            borderRadius: BorderRadius.circular(100)),
+                        child: TextButton(
+                          onPressed: (() {
+                            print('button clicked');
+                          }),
+                          child: const Text('Create Room'),
+                        ),
                       ),
-                    ),
-                    Container(
-                      alignment: Alignment.center,
-                      width: 150,
-                      height: 50,
-                      decoration: BoxDecoration(
-                          border: Border.all(
-                            color: Colors.blue,
-                          ),
-                          borderRadius: BorderRadius.circular(100)),
-                      child: TextButton(
-                        onPressed: (() {
-                          print('button clicked');
-                        }),
-                        child: const Text('Enter Room'),
+                      Container(width: 50),
+                      Container(
+                        alignment: Alignment.center,
+                        width: 150,
+                        height: 50,
+                        decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.blue,
+                            ),
+                            borderRadius: BorderRadius.circular(100)),
+                        child: TextButton(
+                          onPressed: (() {
+                            print('button clicked');
+                          }),
+                          child: const Text('Enter Room'),
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ],
             )));

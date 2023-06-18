@@ -30,13 +30,11 @@ class _LoginPageState extends State<LoginPage> {
                 Expanded(
                   flex: 1,
                   child: Container(
-                      width: 300,
-                      height: 300,
                       child: const Image(
-                        image: NetworkImage(
-                            'https://png.pngtree.com/png-vector/20190130/ourmid/pngtree-cute-animal-shiba-inu-cartoon-expression-pack-available-for-commercial-use-png-image_680119.jpg'),
-                        //fit: BoxFit.contain,
-                      )),
+                    image: NetworkImage(
+                        'https://png.pngtree.com/png-vector/20190130/ourmid/pngtree-cute-animal-shiba-inu-cartoon-expression-pack-available-for-commercial-use-png-image_680119.jpg'),
+                    //fit: BoxFit.contain,
+                  )),
                 ),
                 Padding(
                   padding: const EdgeInsets.all(16.0),
