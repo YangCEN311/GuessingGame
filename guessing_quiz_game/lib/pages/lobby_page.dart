@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:guessing_quiz_game/pages/host_page.dart';
+import 'package:guessing_quiz_game/pages/guest_page.dart';
 
 class LobbyPage extends StatefulWidget {
   const LobbyPage({super.key, required this.name});
@@ -68,7 +69,11 @@ class _LobbyPageState extends State<LobbyPage> {
                             borderRadius: BorderRadius.circular(100)),
                         child: TextButton(
                           onPressed: (() {
-                            print('button clicked');
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        GuestPage(name: widget.name)));
                           }),
                           child: const Text('Enter Room'),
                         ),

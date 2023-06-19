@@ -1,7 +1,10 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:guessing_quiz_game/model/question.dart';
 import 'package:guessing_quiz_game/model/user.dart';
+import 'package:guessing_quiz_game/pages/squestion_page.dart';
+import 'package:guessing_quiz_game/pages/aquestion_page.dart';
 
 class GamelobbyPage extends StatefulWidget {
   const GamelobbyPage({super.key, required this.name, required this.states});
@@ -17,6 +20,13 @@ class _GamelobbyPageState extends State<GamelobbyPage> {
     UserStates(name: 'tom', ipadrr: '123', port: 456, score: 0, ishost: false),
     UserStates(name: 'Sandy', ipadrr: '456', port: 789, score: 0, ishost: false)
   ];
+
+  Question ques = Question(
+      question: '1+1= ?',
+      optionA: '1',
+      optionB: '2',
+      optionC: '3',
+      answer: 'A');
   List<String> testlist = [];
   bool listening = false;
   void startlisten() async {
@@ -62,11 +72,26 @@ class _GamelobbyPageState extends State<GamelobbyPage> {
             ),
             ListTile(
               title: const Text('Send Question'),
-              onTap: () {},
+              onTap: () async {
+                final result = await Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => SquestionPage()));
+                ques = result;
+                setState(() {
+                  plylist[0].name = ques.question;
+                });
+              },
             ),
             ListTile(
               title: const Text('Answer Question'),
-              onTap: () {},
+              onTap: () async {
+                final result = await Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: ((context) => AquestionPage(question: ques))));
+                setState(() {
+                  plylist[1].name = result;
+                });
+              },
             ),
           ],
         ),

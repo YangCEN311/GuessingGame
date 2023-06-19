@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
 
 class Question {
-  String? question;
-  String? option1;
-  String? option2;
-  String? option3;
-  int? answer;
+  String question = '';
+  String optionA = '';
+  String optionB = '';
+  String optionC = '';
+  String answer = '';
+  Question(
+      {required this.question,
+      required this.optionA,
+      required this.optionB,
+      required this.optionC,
+      required this.answer});
 }
