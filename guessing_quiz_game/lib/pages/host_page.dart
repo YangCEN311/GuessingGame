@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:guessing_quiz_game/userstates/user.dart';
+import 'package:guessing_quiz_game/model/user.dart';
 import 'package:guessing_quiz_game/pages/gamelobby_page.dart';
 
 class HostPage extends StatefulWidget {
@@ -87,8 +87,8 @@ class _HostPageState extends State<HostPage> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) =>
-                              GamelobbyPage(states: gethostState()),
+                          builder: (context) => GamelobbyPage(
+                              name: widget.name, states: gethostState()),
                         ),
                       );
                     }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:guessing_quiz_game/pages/gamelobby_page.dart';
 import 'pages/lobby_page.dart';
 import 'pages/login_page.dart';
 import 'pages/host_page.dart';
@@ -28,9 +29,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.purple,
         ),
-        home: const LoginPage(
-            //name: "Admin",
-            ),
+        home: const LoginPage(),
       ),
     );
   }

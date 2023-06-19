@@ -4,9 +4,8 @@ class UserStates {
   String name;
   String ipadrr;
   int port;
-  double score;
+  int score;
   bool ishost;
-  final Map<int, UserStates> playerlist = Map<int, UserStates>();
   UserStates(
       {required this.name,
       required this.ipadrr,
